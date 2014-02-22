@@ -17,25 +17,37 @@ def get_url_content(url):
     req = urllib2.Request(url, headers=i_headers)
     return urllib2.urlopen(req).read()
 
-f=open('basic_words_macmillan.txt','r')
-fout=open('pron_basic','a');
+f=open('list2','r')
+fout=open('pron_list2','a');
 wordlist=f.readlines()
 word_pron=[]
 word_pron_url=[]
 
+j=395 #已经获取了j个
 for i in range(0,len(wordlist)):
-    url='http://www.macmillandictionary.com/us/dictionary/american/'+wordlist[i];
+    url='http://www.macmillandictionary.com/us/dictionary/american/'+wordlist[i+j][0:-1];
     html_text=get_url_content(url)
     #pron_str=re.findall(r'美\s*<strong>\[</strong><strong lang="EN-US" xml:lang="EN-US">\D*</strong>',html_text)
     pron_str=re.findall(r'</span>\D*<span class="SEP" context="PRON',html_text)
+    #print pron_str 
+    if pron_str == []:
+        word_pron.append('viod')
+        word_pron_url.append('void')
+        fout.write(wordlist[i+j][0:-2]+'cannot found\n')
+        continue
     pron=pron_str[0][7:-31]
     print pron
     word_pron.append(pron)
     pron_str=re.findall(r'data-src-mp3="http://www.macmillandictionary.com/us/media/american/\D*\d*.mp3',html_text)
+    if pron_str == []:
+        #word_pron.append('viod')
+        word_pron_url.append('void')
+        fout.write(wordlist[i+j][0:-2]+' '+word_pron[i]+' '+'cannot found\n')
+        continue
     pron=pron_str[0][14:len(pron_str[0])]
     print pron
     word_pron_url.append(pron)
-    fout.write(wordlist[i][0:-2]+' '+word_pron[i]+' '+word_pron_url[i]+'\n')
+    fout.write(wordlist[i+j][0:-1]+' '+word_pron[i]+' '+word_pron_url[i]+'\n')
 
 f.close()
 fout.close()

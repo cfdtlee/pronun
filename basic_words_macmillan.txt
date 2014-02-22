@@ -10,7 +10,6 @@ acceptable
 accident
 accidental
 accidentally
-according to
 account
 accurate
 accurately
@@ -58,7 +57,6 @@ ahead
 aim
 air
 aircraft
-air force
 airport
 alcohol
 alcoholic
@@ -75,7 +73,6 @@ also
 although
 always
 American
-American football
 among
 amount
 an
@@ -104,14 +101,14 @@ appearance
 apple
 apply
 approval
-approve of
+approve
 April
 are
 area
 argue
 argument
 arm
-armed forces
+armed
 army
 around
 arrange
@@ -166,7 +163,7 @@ bank
 bar
 base
 baseball
-based on
+based
 basic
 basket
 basketball
@@ -195,7 +192,7 @@ behind
 belief
 believe
 bell
-belong to
+belong
 below
 belt
 bend
@@ -288,7 +285,6 @@ button
 buy
 buyer
 by
-by means of
 cafe
 cake
 calculate
@@ -301,7 +297,7 @@ camp
 can
 cancer
 cannot
-capable of
+capable
 capital
 car
 card
@@ -367,7 +363,7 @@ citizen
 city
 claim
 class
-classical music
+classical
 classroom
 clay
 clean
@@ -436,7 +432,7 @@ connection
 conscious
 conservative
 consider
-consist of
+consist
 contain
 container
 continue
@@ -511,7 +507,7 @@ dead
 deaf
 deafness
 deal
-deal with
+deal
 death
 debate
 decay
@@ -535,7 +531,7 @@ deliver
 democracy
 democratic
 department
-depend on
+depend
 depth
 describe
 description
@@ -792,7 +788,7 @@ final
 finally
 financial
 find
-find out
+find
 finger
 finish
 fire
@@ -887,27 +883,21 @@ gentle
 gently
 geography
 get
-get rid of
-get up
 girl
 girlfriend
 give
-give birth
-give up
 glass
 glue
 go
 goal
 goat
 god
-go down
 gold
 golden
 golf
 good
 goodbye
 goods
-go up
 govern
 government
 graceful
@@ -931,7 +921,6 @@ ground
 group
 grow
 growth
-grow up
 guard
 guess
 guest
@@ -947,7 +936,6 @@ hand
 handle
 hang
 happen
-happen to
 happily
 happiness
 happy
@@ -960,7 +948,6 @@ hate
 have
 he
 head
-head teacher
 health
 healthy
 hear
@@ -1045,7 +1032,6 @@ impressive
 improve
 improvement
 in
-in charge of
 include
 including
 income
@@ -1059,7 +1045,6 @@ individual
 indoor
 industrial
 industry
-in fact
 infect
 infection
 infectious
@@ -1073,12 +1058,10 @@ injured
 injury
 ink
 inner
-in order to
 insect
 inside
 instance
 instead
-instead of
 institution
 instruction
 instrument
@@ -1170,7 +1153,6 @@ late
 laugh
 laughter
 law
-law-making
 lawyer
 layer
 lazy
@@ -1185,10 +1167,8 @@ learner
 least
 leather
 leave
-leave out
 lecture
 left
-left-wing
 leg
 legal
 legally
@@ -1233,8 +1213,6 @@ loneliness
 lonely
 long
 look
-look after
-look for
 loose
 lose
 loss
@@ -1260,7 +1238,7 @@ mainly
 major
 majority
 make
-make up
+making
 male
 man
 manage
@@ -1308,7 +1286,6 @@ method
 metre
 midday
 middle
-middle-class
 midnight
 military
 milk
@@ -1327,7 +1304,7 @@ mistake
 mix
 mixed
 mixture
-mobile phone
+mobile
 model
 modern
 molecule
@@ -1402,10 +1379,8 @@ no
 noise
 noisily
 noisy
-no longer
 none
 nonsense
-no one
 nor
 normal
 normally
@@ -1448,7 +1423,6 @@ officially
 often
 oil
 old
-old-fashioned
 on
 once
 one
@@ -1527,7 +1501,6 @@ patient
 pattern
 pause
 pay
-pay attention
 payment
 peace
 peaceful
@@ -1561,7 +1534,7 @@ physical
 physically
 physics
 piano
-pick up
+pick
 picture
 piece
 pig
@@ -1594,7 +1567,6 @@ poison
 poisonous
 pole
 police
-police officer
 policy
 polite
 politely
@@ -1646,7 +1618,7 @@ previous
 previously
 price
 priest
-prime minister
+prime
 prince
 princess
 principle
@@ -1700,8 +1672,6 @@ purple
 purpose
 push
 put
-put down
-put on
 qualification
 quality
 quantity
@@ -1742,7 +1712,7 @@ record
 red
 reduce
 reduction
-refer to
+refer
 reflect
 refusal
 refuse
@@ -1750,7 +1720,7 @@ region
 regular
 regularly
 related
-relating to
+relating
 relation
 relationship
 relative
@@ -1791,7 +1761,6 @@ rich
 ride
 rider
 right
-right-wing
 ring
 rise
 risk
@@ -1962,7 +1931,7 @@ slightly
 slip
 slope
 slow
-slow down
+slow
 slowly
 small
 smell
@@ -2047,7 +2016,7 @@ steep
 stem
 step
 stick
-stick out
+stick
 sticky
 stiff
 still
@@ -2083,7 +2052,6 @@ success
 successful
 successfully
 such
-such as
 suck
 sudden
 suddenly
@@ -2117,8 +2085,6 @@ swim
 swimmer
 swing
 switch
-switch off
-switch on
 swollen
 sword
 symbol
@@ -2128,9 +2094,6 @@ system
 table
 tail
 take
-take off
-take part in
-take place
 talk
 tall
 taste
@@ -2160,7 +2123,6 @@ tenth
 test
 than
 thank
-thank you
 that
 the
 theatre
@@ -2306,7 +2268,7 @@ up
 upper
 upright
 upset
-upside down
+upside
 upstairs
 upwards
 urgent
@@ -2345,7 +2307,6 @@ vowel
 waist
 wait
 wake
-wake up
 walk
 wall
 want
@@ -2375,7 +2336,6 @@ weigh
 weight
 welcome
 well
-well-known
 west
 western
 wet
@@ -2424,7 +2384,6 @@ wool
 word
 work
 worker
-working-class
 world
 worried
 worry
