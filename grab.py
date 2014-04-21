@@ -2,7 +2,8 @@
 # coding=utf-8
 import urllib2
 import re
-'''def get_content_by_proxy(url, proxy):
+def get_content_by_proxy(url):
+    proxy='14.18.16.66:80'
     opener = urllib2.build_opener(urllib2.ProxyHandler({'http':proxy}), urllib2.HTTPHandler(debuglevel=1))
     urllib2.install_opener(opener)
     i_headers = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1) Gecko/20090624 Firefox/3.5", \
@@ -10,30 +11,34 @@ import re
     req = urllib2.Request(url, headers=i_headers)
     content = urllib2.urlopen(req).read()
     return content
-''' 
+ 
 def get_url_content(url):
     i_headers = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1) Gecko/20090624 Firefox/3.5",\
                  "Referer": 'http://www.baidu.com'}
     req = urllib2.Request(url, headers=i_headers)
     return urllib2.urlopen(req).read()
 
-f=open('list2','r')
-fout=open('pron_list2','a');
+f=open('total_result','r')
+fout=open('total_pron','a')
 wordlist=f.readlines()
 word_pron=[]
 word_pron_url=[]
 
-j=395 #已经获取了j个
-for i in range(0,len(wordlist)):
+j=18562 #已经获取了j个
+for i in range(0,len(wordlist)-j):
     url='http://www.macmillandictionary.com/us/dictionary/american/'+wordlist[i+j][0:-1];
-    html_text=get_url_content(url)
+    #html_text=get_url_content(url)
+    html_text=get_content_by_proxy(url)
+    fhtml=open('html/'+wordlist[i+j][0:-1],'w') #储存html文档
+    fhtml.write(html_text)
+    fhtml.close()
     #pron_str=re.findall(r'美\s*<strong>\[</strong><strong lang="EN-US" xml:lang="EN-US">\D*</strong>',html_text)
     pron_str=re.findall(r'</span>\D*<span class="SEP" context="PRON',html_text)
     #print pron_str 
     if pron_str == []:
         word_pron.append('viod')
         word_pron_url.append('void')
-        fout.write(wordlist[i+j][0:-2]+'cannot found\n')
+        fout.write(wordlist[i+j][0:-1]+' cannot found\n')
         continue
     pron=pron_str[0][7:-31]
     print pron
@@ -42,7 +47,7 @@ for i in range(0,len(wordlist)):
     if pron_str == []:
         #word_pron.append('viod')
         word_pron_url.append('void')
-        fout.write(wordlist[i+j][0:-2]+' '+word_pron[i]+' '+'cannot found\n')
+        fout.write(wordlist[i+j][0:-1]+' '+word_pron[i]+' '+'cannot found\n')
         continue
     pron=pron_str[0][14:len(pron_str[0])]
     print pron
