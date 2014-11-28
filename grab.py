@@ -18,22 +18,45 @@ def get_url_content(url):
     req = urllib2.Request(url, headers=i_headers)
     return urllib2.urlopen(req).read()
 
-f=open('total_result','r')
-fout=open('total_pron','a')
+f=open('month','r')
+fout=open('total_pron_month','a')
 wordlist=f.readlines()
 word_pron=[]
 word_pron_url=[]
+j=0 #已经获取了j个
+# for i in range(0,len(wordlist)-j):
+#     url='http://www.iciba.com/'+wordlist[i+j][0:-1];
+#     html_text=get_url_content(url)
+#     #html_text=get_content_by_proxy(url)
+#     fhtml=open('html/'+wordlist[i+j][0:-1],'w') #储存html文档
+#     fhtml.write(html_text)
+#     fhtml.close()
+#     #pron_str=re.findall(r'美\s*<strong>\[</strong><strong lang="EN-US" xml:lang="EN-US">\D*</strong>',html_text)
+#     pron_str=re.findall(r'\[<.*\]',html_text)
+#     #print pron_str 
+#     if pron_str == []:
+#         word_pron.append('viod')
+#         word_pron_url.append('void')
+#         fout.write(wordlist[i+j][0:-1]+' cannot found\n')
+#         continue
+#     if len(pron_str) == 2:
+#         pron = pron_str[1][48:-18]
+#     else:
+#         pron=pron_str[0][48:-18]
+#     print pron
+#     word_pron.append(pron)
+#     fout.write(wordlist[i+j][0:-1]+' '+word_pron[i]+'\n')
 
-j=18562 #已经获取了j个
+j=0 #已经获取了j个
 for i in range(0,len(wordlist)-j):
     url='http://www.macmillandictionary.com/us/dictionary/american/'+wordlist[i+j][0:-1];
-    #html_text=get_url_content(url)
-    html_text=get_content_by_proxy(url)
+    html_text=get_url_content(url)
+    #html_text=get_content_by_proxy(url)
     fhtml=open('html/'+wordlist[i+j][0:-1],'w') #储存html文档
     fhtml.write(html_text)
     fhtml.close()
     #pron_str=re.findall(r'美\s*<strong>\[</strong><strong lang="EN-US" xml:lang="EN-US">\D*</strong>',html_text)
-    pron_str=re.findall(r'</span>\D*<span class="SEP" context="PRON',html_text)
+    pron_str=re.findall(r'</span>\D*<span class="SEP" context="PRON-after"',html_text)
     #print pron_str 
     if pron_str == []:
         word_pron.append('viod')
