@@ -16821,39 +16821,40 @@
         output = document.getElementById("output");
         for (var i=0; i<words.length ;i++ )
         {
-            phonetic = dic[words[i].toLowerCase().replace(/[^a-zA-Z]/g,'')];
+            w = words[i].toLowerCase().replace(/[^a-zA-Z]/g,'');
+            phonetic = dic[w];
             if (phonetic == undefined) //not in the dictionary
             {
-                if(words[i].substr(words[i].length-3)=='ing')
+                if(w.substr(w.length-3)=='ing')
                 {
                     //remove -ing
-                    phonetic = dic[words[i].substr(0, words[i].length-3)];
+                    phonetic = dic[w.substr(0, w.length-3)];
                     if(phonetic == undefined)
                     //remove -ing, add -e
-                        phonetic = dic[words[i].substr(0, words[i].length-3)+'e'];
+                        phonetic = dic[w.substr(0, w.length-3)+'e'];
                     if(phonetic == undefined)
                     //remove -ing, and the double consonant
-                        phonetic = dic[words[i].substr(0, words[i].length-4)];
+                        phonetic = dic[w.substr(0, w.length-4)];
                     if(phonetic == undefined)
                     //remove -ing, and the double consonant, add ie
-                        phonetic = dic[words[i].substr(0, words[i].length-4)+'ie'];
+                        phonetic = dic[w.substr(0, w.length-4)+'ie'];
                     if(phonetic != undefined)
                             phonetic = phonetic+'ɪŋ';
                 }
 
-                if(words[i].substr(words[i].length-2)=='ed')
+                if(w.substr(w.length-2)=='ed')
                 {
                     //remove -ed
-                    phonetic = dic[words[i].substr(0, words[i].length-2)];
+                    phonetic = dic[w.substr(0, w.length-2)];
                     if(phonetic == undefined)
                         //remove -d
-                        phonetic = dic[words[i].substr(0, words[i].length-1)];
-                    if(phonetic == undefined)
-                        //remove -ed, and the double consonant
-                        phonetic = dic[words[i].substr(0, words[i].length-3)];
+                        phonetic = dic[w.substr(0, w.length-1)];
                     if(phonetic == undefined)
                         //remove -ied, add 'y'
-                        phonetic = dic[words[i].substr(0, words[i].length-3)+'y'];
+                        phonetic = dic[w.substr(0, w.length-3)+'y'];
+                    if(phonetic == undefined)
+                        //remove -ed, and the double consonant
+                        phonetic = dic[w.substr(0, w.length-3)];
                     if(phonetic != undefined)
                         end = phonetic[phonetic.length-1]
                         if(end == 't' || end == 'd')
@@ -16863,13 +16864,13 @@
                         else
                             phonetic = phonetic+'d';
                 }
-                if(words[i].substr(words[i].length-1)=='s')
+                if(w.substr(w.length-1)=='s')
                 {
                     endw='';
                     if(phonetic == undefined)
                     {
                         //remove -s
-                        origin = words[i].substr(0, words[i].length-1);
+                        origin = w.substr(0, w.length-1);
                         phonetic = dic[origin];
                         if(phonetic != undefined)
                         {
@@ -16879,22 +16880,22 @@
                     if(phonetic == undefined)
                     {
                         //remove -es
-                        phonetic = dic[words[i].substr(0, words[i].length-2)];
+                        phonetic = dic[w.substr(0, w.length-2)];
                     }
                     if(phonetic == undefined)
                     {
                         //remove -ies, add 'y'
-                        phonetic = dic[words[i].substr(0, words[i].length-3)+'y'];
+                        phonetic = dic[w.substr(0, w.length-3)+'y'];
                     }
                     if(phonetic == undefined)
                     {
                         //remove -ves, add 'f'
-                        phonetic = dic[words[i].substr(0, words[i].length-3)+'f'];
+                        phonetic = dic[w.substr(0, w.length-3)+'f'];
                     }
                     if(phonetic == undefined)
                     {
                         //remove -ves, add 'fe'
-                        phonetic = dic[words[i].substr(0, words[i].length-3)+'fe'];
+                        phonetic = dic[w.substr(0, w.length-3)+'fe'];
                         if(phonetic != undefined)
                         {
                             endw='e';
@@ -16918,19 +16919,19 @@
                         }
                     }
                 }
-                if(words[i].substr(words[i].length-2)=='er')
+                if(w.substr(w.length-2)=='er')
                 {
                     //remove -er
-                    phonetic = dic[words[i].substr(0, words[i].length-2)];
+                    phonetic = dic[w.substr(0, w.length-2)];
                     if(phonetic == undefined)
                         //remove -r
-                        phonetic = dic[words[i].substr(0, words[i].length-1)];
+                        phonetic = dic[w.substr(0, w.length-1)];
                     if(phonetic == undefined)
                         //remove -ier, add 'y'
-                        phonetic = dic[words[i].substr(0, words[i].length-3)+'y'];
+                        phonetic = dic[w.substr(0, w.length-3)+'y'];
                     if(phonetic == undefined)
                         //remove -er, and the double consonant
-                        phonetic = dic[words[i].substr(0, words[i].length-3)];
+                        phonetic = dic[w.substr(0, w.length-3)];
                     if(phonetic != undefined)
                         phonetic = phonetic + 'ər';
                         // end = phonetic[phonetic.length-1]
@@ -16941,19 +16942,19 @@
                         // else
                         //     phonetic = phonetic+'d';
                 }
-                if(words[i].substr(words[i].length-3)=='est')
+                if(w.substr(w.length-3)=='est')
                 {
                     //remove -est
-                    phonetic = dic[words[i].substr(0, words[i].length-3)];
+                    phonetic = dic[w.substr(0, w.length-3)];
                     if(phonetic == undefined)
                         //remove -st
-                        phonetic = dic[words[i].substr(0, words[i].length-2)];
+                        phonetic = dic[w.substr(0, w.length-2)];
                     if(phonetic == undefined)
                         //remove -iest, add 'y'
-                        phonetic = dic[words[i].substr(0, words[i].length-4)+'y'];
+                        phonetic = dic[w.substr(0, w.length-4)+'y'];
                     if(phonetic == undefined)
                         //remove -est, and the double consonant
-                        phonetic = dic[words[i].substr(0, words[i].length-4)];
+                        phonetic = dic[w.substr(0, w.length-4)];
                     if(phonetic != undefined)
                         phonetic = phonetic + 'ɪst';
                         // end = phonetic[phonetic.length-1]
@@ -16966,7 +16967,7 @@
                 }
             }
             if(phonetic == undefined)
-                phonetic = words[i]
+                phonetic = w
             output.innerHTML = output.innerHTML +
                     "<div class='item' style='text-align:center;'>" +
                         "<div onclick='change_phonetic(this)'>"+words[i]+"</div><hr>"+
@@ -16975,7 +16976,7 @@
                                 phonetic +
                                 "</div>" +
                             "</div>" +
-//                        "<div><textarea style='border: 0' rows='1' cols='5' class='pron' >"+ dic[words[i].toLowerCase()] +"'</textarea></div>" +
+//                        "<div><textarea style='border: 0' rows='1' cols='5' class='pron' >"+ dic[w.toLowerCase()] +"'</textarea></div>" +
                     "</div>"; //分割后的字符输出
         }
     }
@@ -16988,7 +16989,7 @@
     </style>
 </head>
 <body>
-<h2>Convert article into phonetic symbol (version 1.1)</h2>
+<h2>Convert article into phonetic symbol (version 1.2, fixed bugs in getting the phonetic symbols of some forms like "Denied,")</h2>
 <div style="width: 800">
 <h3>How to use it:</h3>
 <p>Input your article in the box, and click "Convert". When the phonetic symbols appear, you can click it to change the position vertically. If the phonetic symbol is incorrect, you can click the word above the line to modify it.</p>
